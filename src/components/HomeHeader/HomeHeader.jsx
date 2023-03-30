@@ -15,7 +15,6 @@ import userImg from '../../assets/img/user.png'
 function HomeHeader() {
   const { userLogin } = useSelector((state) => state.userManageReducer)
   const [showDrop, setShowDrop] = useState(false)
-  console.log(showDrop)
   const dispatch = useDispatch()
   return (
     <HeaderCP
@@ -116,7 +115,6 @@ function HomeHeader() {
                     </ul>
                   </div>
                 ) : null}
-
               </div>
             </div>
           )}

@@ -59,6 +59,7 @@ function SwiperCarousel() {
           disableOnInteraction: false
         }}
         pagination={{
+          el: '.swiper-pagination',
           clickable: true
         }}
         navigation
