@@ -100,16 +100,7 @@ function CheckOut(props) {
     }
   })
 
-  let userParam = {}
-
-  if (localStorage.getItem(USER_LOGIN)) {
-    userParam = JSON.parse(localStorage.getItem(USER_LOGIN))
-  } else {
-    alert('bạn k có quyền truy cập trang này')
-    return <Redirect to="/" />
-  }
-
-  if (userParam.maLoaiNguoiDung !== 'QuanTri') {
+  if (!localStorage.getItem(USER_LOGIN)) {
     alert('bạn k có quyền truy cập trang này')
     return <Redirect to="/" />
   }
@@ -120,17 +111,7 @@ function CheckOut(props) {
         <div className="row">
           <div className="col-9">
             <div className="info">
-              <div className="info__rap">
-                {/* <img width={50} style={{ height: 50 }} src={ticketRoomDetail !== null ? ticketRoomDetail?.thongTinPhim?.hinhAnh : ''} alt="img" />
-                <div className="rap__detail">
-                  <p className="rap__detail__name">
-                    {ticketRoomDetail?.thongTinPhim.tenCumRap}
-                  </p>
-                  <div className="rap__detail__adress">
-                    {ticketRoomDetail.thongTinPhim?.diaChi}
-                  </div>
-                </div> */}
-              </div>
+              <div className="info__rap" />
               <div className="info__timer">
                 <h2 className="timer__title">Thời gian giữ ghế</h2>
                 <div className="timer__cowndown">
